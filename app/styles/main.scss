@@ -45,28 +45,7 @@ div {
     text-decoration: none;
     color: white;
   }
-  .nav_menu {
-    background-color: rgb(109, 171, 215);
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
-    border: 1px;
-  }
-  .nav_item {
-    display: inline-block;
-    border: 1px;
-    border-radius: 30px;
-    margin: 0 auto 0 auto;
-    padding: 5px 20px 5px 20px;
-    background-color: rgb(55, 117, 209);
-    -webkit-transition: width 5s, background-color 5s, -webkit-transform 5s;
-    transition: width 5s, background-color 5s, transform 5s;
-    cursor: pointer;
-  }
-  .nav_item:hover {
-    background-color: #1a1aff;
-    width: 150px;
-    cursor: pointer;
-  }
+
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -94,6 +73,30 @@ div {
   .btn {
     font-size: 21px;
     padding: 14px 24px;
+  }
+}
+
+/* nav_menus */
+.nav_menu {
+  background-color: rgb(109, 171, 215);
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  border: 1px;
+  .nav_item {
+    display: inline-block;
+    border: 1px;
+    border-radius: 30px;
+    margin: 0 auto 0 auto;
+    padding: 5px 20px 5px 20px;
+    background-color: rgb(55, 117, 209);
+    -webkit-transition: width 3s, background-color 3s, -webkit-transform 3s;
+    transition: width 3s, background-color 3s, transform 3s;
+    cursor: pointer;
+  }
+  .nav_item:hover {
+    background-color: #1a1aff;
+    width: 150px;
+    cursor: pointer;
   }
 }
 
