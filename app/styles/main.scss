@@ -40,10 +40,43 @@ div {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+
   a {
     text-decoration: none;
     color: white;
+  }
+
+  .player {
+    background-color: black;
+    height: 100px;
+    .play {
+      background-color: rgb(27, 144, 35);
+      -webkit-transition: background-color 3s, -webkit-transform 3s;
+      transition: background-color 3s, transform 3s;
+      cursor: pointer;
+    }
+    .play:hover {
+      background-color: rgb(5, 255, 98);
+    }
+    .pause {
+      background-color: white;
+      -webkit-transition: background-color 3s, -webkit-transform 3s;
+      transition: background-color 3s, transform 3s;
+      cursor: pointer;
+    }
+    .pause:hover {
+      background-color: rgb(245, 155, 71);
+    }
+    .stop {
+      background-color: rgb(154, 19, 19);
+      -webkit-transition: background-color 3s, -webkit-transform 3s;
+      transition: background-color 3s, transform 3s;
+      cursor: pointer;
+    }
+    .stop:hover {
+      background-color: rgb(255, 4, 4);
+    }
+
   }
 
   /* Make the masthead heading the same height as the navigation */
@@ -79,7 +112,6 @@ div {
 /* nav_menus */
 .nav_menu {
   background-color: rgb(109, 171, 215);
-  border-radius: 20px;
   padding: 10px 20px 10px 20px;
   border: 1px;
   .nav_item {
@@ -89,13 +121,12 @@ div {
     margin: 0 auto 0 auto;
     padding: 5px 20px 5px 20px;
     background-color: rgb(55, 117, 209);
-    -webkit-transition: width 3s, background-color 3s, -webkit-transform 3s;
-    transition: width 3s, background-color 3s, transform 3s;
+    -webkit-transition: background-color 3s, -webkit-transform 3s;
+    transition: background-color 3s, transform 3s;
     cursor: pointer;
   }
   .nav_item:hover {
     background-color: #1a1aff;
-    width: 150px;
     cursor: pointer;
   }
 }

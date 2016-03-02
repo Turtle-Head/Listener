@@ -43,14 +43,22 @@
           <div class="nav_item" id="about"><a href="#">About</a></div>
           <div class="nav_item" id="contact"><a href="#">Contact Us</a></div>
         </div>
-        <h3 class="text-muted">Listener</h3>
-      </div>
-
-      <div class="jumbotron">
+        <div class="player">
+          <img class="play" src="images/play.png">
+          <img class="pause" src="images/pause.png">
+          <img class="stop" src="images/stop.png">
+        </div>
         <div class="nav_menu">
+          <input type="checkbox" class="mood" id="angry">Angry</input>
+          <input type="checkbox" class="mood" id="happy">Happy</input>
+          <input type="checkbox" class="mood" id="sad">Sad</input>
           <input class="src" id="new_search" placeholder="Search for music"></input>
           <div class="nav_item" id="search">Search</div>
         </div>
+      </div>
+
+      <div class="jumbotron">
+
         <h1>'Allo, 'Allo!</h1>
         <p class="lead">Always a pleasure scaffolding your apps.</p>
         <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
