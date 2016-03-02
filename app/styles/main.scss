@@ -14,6 +14,20 @@ $icon-font-path: '../fonts/';
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #33334d;
+	background-image:
+	-webkit-linear-gradient(left, #4976C9, #33334d);
+	background-image:
+	-o-linear-gradient(left, #4976C9, #33334d);
+	background-image:
+	linear-gradient(to right, #4976C9, #33334d);
+  color: white;
+  text-align: center;
+}
+
+/* Align Divs in the center */
+div {
+  margin: 0 auto 0 auto;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -27,7 +41,32 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .nav_menu {
+    background-color: rgb(109, 171, 215);
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    border: 1px;
+  }
+  .nav_item {
+    display: inline-block;
+    border: 1px;
+    border-radius: 30px;
+    margin: 0 auto 0 auto;
+    padding: 5px 20px 5px 20px;
+    background-color: rgb(55, 117, 209);
+    -webkit-transition: width 5s, background-color 5s, -webkit-transform 5s;
+    transition: width 5s, background-color 5s, transform 5s;
+    cursor: pointer;
+  }
+  .nav_item:hover {
+    background-color: #1a1aff;
+    width: 150px;
+    cursor: pointer;
+  }
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
