@@ -12,6 +12,7 @@ $icon-font-path: '../fonts/';
 
 /* Space out content a bit */
 body {
+  font-family: 'Cinzel', serif;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #33334d;
@@ -47,36 +48,23 @@ div {
   }
 
   .player {
-    background-color: black;
-    height: 100px;
-    .play {
-      background-color: rgb(27, 144, 35);
-      -webkit-transition: background-color 3s, -webkit-transform 3s;
-      transition: background-color 3s, transform 3s;
-      cursor: pointer;
-    }
-    .play:hover {
-      background-color: rgb(5, 255, 98);
-    }
-    .pause {
-      background-color: white;
-      -webkit-transition: background-color 3s, -webkit-transform 3s;
-      transition: background-color 3s, transform 3s;
-      cursor: pointer;
-    }
-    .pause:hover {
-      background-color: rgb(245, 155, 71);
-    }
-    .stop {
-      background-color: rgb(154, 19, 19);
-      -webkit-transition: background-color 3s, -webkit-transform 3s;
-      transition: background-color 3s, transform 3s;
-      cursor: pointer;
-    }
-    .stop:hover {
-      background-color: rgb(255, 4, 4);
-    }
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    background-color: rgb(9, 11, 60);
+    color: white;
 
+    audio {
+      margin: auto 10px auto auto;
+      padding: 5px 10px 5px 10px;
+      display: inline-block;
+    }
+    .playing {
+      padding: 5px 10px 5px 10px;
+      display: inline-block;
+    }
+    .current_track {
+      display: inline;
+    }
   }
 
   /* Make the masthead heading the same height as the navigation */
@@ -107,6 +95,19 @@ div {
     font-size: 21px;
     padding: 14px 24px;
   }
+  .lists {
+
+    .results {
+      display: inline-block;
+      background-color: rgb(10, 35, 204);
+      width: 49%;
+    }
+    .playlist {
+      display: inline-block;
+      background-color: rgb(9, 11, 60);
+      width: 49%;
+    }
+  }
 }
 
 /* nav_menus */
@@ -114,6 +115,7 @@ div {
   background-color: rgb(109, 171, 215);
   padding: 10px 20px 10px 20px;
   border: 1px;
+
   .nav_item {
     display: inline-block;
     border: 1px;
@@ -125,6 +127,7 @@ div {
     transition: background-color 3s, transform 3s;
     cursor: pointer;
   }
+
   .nav_item:hover {
     background-color: #1a1aff;
     cursor: pointer;

@@ -16,6 +16,19 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Cinzel:400,900:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -39,14 +52,14 @@
     <div class="container">
       <div class="header">
         <div class="nav_menu">
-          <div class="nav_item" id="home"><a href="#">Home</a></div>
           <div class="nav_item" id="about"><a href="#">About</a></div>
           <div class="nav_item" id="contact"><a href="#">Contact Us</a></div>
         </div>
         <div class="player">
-          <img class="play" src="images/play.png">
-          <img class="pause" src="images/pause.png">
-          <img class="stop" src="images/stop.png">
+          <div class="current_track">
+            <div class="title" id="playing">Dubstep</div>
+            <audio controls><source src="tracks/dubstep.mp3" type="audio/mpeg"></audio>
+          </div>
         </div>
         <div class="nav_menu">
           <input type="checkbox" class="mood" id="angry">Angry</input>
@@ -59,9 +72,14 @@
 
       <div class="jumbotron">
 
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+        <h1>Listener</h1>
+        <p class="lead">Search for tracks to listen to, create a playlist and enjoy! You can customize your search based on your mood, try it out.</p>
+        <div class="lists">
+          <div class="playlist col-xs-6">Playlist
+          </div>
+          <div class="results col-xs-6">Results
+          </div>
+        </div>
       </div>
 
       <div class="row marketing">
