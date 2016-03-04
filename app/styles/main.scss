@@ -116,6 +116,11 @@ div {
   padding: 10px 20px 10px 20px;
   border: 1px;
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   .nav_item {
     display: inline-block;
     border: 1px;
@@ -126,11 +131,23 @@ div {
     -webkit-transition: background-color 3s, -webkit-transform 3s;
     transition: background-color 3s, transform 3s;
     cursor: pointer;
+    color: white;
+  }
+
+  .sndc {
+    display: inline-block;
+    margin: 0 auto 0 auto;
+    padding: 5px 20px 5px 20px;
   }
 
   .nav_item:hover {
     background-color: #1a1aff;
     cursor: pointer;
+  }
+
+  input {
+    border-radius: 15px;
+    padding: 5px;
   }
 }
 
