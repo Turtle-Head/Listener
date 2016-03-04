@@ -53,17 +53,12 @@ div {
     background-color: rgb(9, 11, 60);
     color: white;
 
-    audio {
-      margin: auto 10px auto auto;
-      padding: 5px 10px 5px 10px;
-      display: inline-block;
-    }
-    .playing {
-      padding: 5px 10px 5px 10px;
-      display: inline-block;
-    }
     .current_track {
       display: inline;
+
+      iframe {
+        height: 100px;
+      }
     }
   }
 
@@ -101,6 +96,13 @@ div {
       display: inline-block;
       background-color: rgb(10, 35, 204);
       width: 49%;
+
+      ul {
+        text-decoration: none;
+        list-style: none;
+        text-align: left;
+        cursor: pointer;
+      }
     }
     .playlist {
       display: inline-block;
