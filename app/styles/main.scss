@@ -55,10 +55,6 @@ div {
 
     .current_track {
       display: inline;
-
-      iframe {
-        height: 100px;
-      }
     }
   }
 
@@ -71,6 +67,9 @@ div {
   }
 }
 
+iframe {
+  height: 100px;
+}
 /* Custom page footer */
 .footer {
   padding-top: 19px;

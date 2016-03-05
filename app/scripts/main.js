@@ -25,32 +25,29 @@ $(function(){
       });
 
       //var track_url = track;
-      SC.oEmbed(track_url, { auto_play: false }).then(function(oEmbed) {
-        console.log('oEmbed response: ', oEmbed);
-        $('.current_track').html(oEmbed.html);
-      });
+      if(Number(play_list.length) === 1) {
+        SC.oEmbed(track_url, { auto_play: true, show_bpm: true }).then(function(oEmbed) {
+          console.log('oEmbed response: ', oEmbed);
+          $('#playlist').append(oEmbed.html);
+        });
+      } else {
+        SC.oEmbed(track_url, { auto_play: false, show_bpm: true }).then(function(oEmbed) {
+          console.log('oEmbed response: ', oEmbed);
+          $('#playlist').append(oEmbed.html);
+        });
+      }
     };
-
-    sc_emb('https://soundcloud.com/dubstep/elements-by-lindsey-stirling');
 
     var play_add = function(index) {
       play_list.push(results[index]);
+      sc_emb(results[index].permalink_url);
       results.splice(index, 1);
       $('#results').text('');
       for(var i = 0; i < results.length; i++) {
-        $('#results').append('<div class="res_li" id=' + index + '>' + results[i].title + '<div>' );
+        $('#results').append('<div class="res_li" id=' + i + '>' + results[i].title + '<div>' );
       }
       $('.res_li').on("click", function(){
         play_add(this.id);
-      });
-      $('#playlist').text('');
-      for(i = 0; i < play_list.length; i++) {
-        $('#playlist').append('<div class="play_li" id=' + i + '>' + play_list[i].title + '<div>' );
-      }
-      $('.play_li').on("click", function(){
-        var track = play_list[this.id].permalink_url;
-        console.log(play_list);
-        sc_emb(track);
       });
     };
 
@@ -86,8 +83,6 @@ $(function(){
         console.log(tracks);
       });*/
     };
-
-
 
     $(".nav_item").on("click", function(){
       switch(this.id){
