@@ -1,3 +1,6 @@
+var results = [];
+var play_list = [];
+
 $(function(){
     var self = this;
 
@@ -16,23 +19,40 @@ $(function(){
       });
     };
 
-    var sc_emb = function(track){
+    var sc_emb = function(track_url){
       SC.initialize({
         client_id: CLIENT_ID
       });
 
-      if (track !== '') {
-        var track_url = track;
-        SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
-          console.log('oEmbed response: ', oEmbed);
-          $('.current_track').html(oEmbed.html);
-        });
-      }
+      //var track_url = track;
+      SC.oEmbed(track_url, { auto_play: false }).then(function(oEmbed) {
+        console.log('oEmbed response: ', oEmbed);
+        $('.current_track').html(oEmbed.html);
+      });
     };
 
-    sc_emb();
+    sc_emb('https://soundcloud.com/dubstep/elements-by-lindsey-stirling');
 
-    var results = [];
+    var play_add = function(index) {
+      play_list.push(results[index]);
+      results.splice(index, 1);
+      $('#results').text('');
+      for(var i = 0; i < results.length; i++) {
+        $('#results').append('<div class="res_li" id=' + index + '>' + results[i].title + '<div>' );
+      }
+      $('.res_li').on("click", function(){
+        play_add(this.id);
+      });
+      $('#playlist').text('');
+      for(i = 0; i < play_list.length; i++) {
+        $('#playlist').append('<div class="play_li" id=' + i + '>' + play_list[i].title + '<div>' );
+      }
+      $('.play_li').on("click", function(){
+        var track = play_list[this.id].permalink_url;
+        console.log(play_list);
+        sc_emb(track);
+      });
+    };
 
     var sc_search = function() {
       SC.initialize({
@@ -47,12 +67,14 @@ $(function(){
           q: search
         }).then(function(tracks) {
           console.log(tracks);
-          results = [];
-          $('#results').html('');
-          for (var index = 0; index < tracks.length; index++){
-            results.push(tracks[index]);
-            $('#results').append('<div class="res_li" id=' + index + '>' + tracks[index].title + '<div><hr>' );
+          results = tracks;
+          $('#results').text('');
+          for (var index = 0; index < results.length; index++){
+            $('#results').append('<div class="res_li" id=' + index + '>' + results[index].title + '<div>' );
           }
+          $('.res_li').on("click", function(){
+            play_add(this.id);
+          });
         });
       }
 
@@ -65,9 +87,7 @@ $(function(){
       });*/
     };
 
-    $('.res_li').on("click", function(){
-      console.log(results[Number(this.id)].permalink_url);
-    });
+
 
     $(".nav_item").on("click", function(){
       switch(this.id){

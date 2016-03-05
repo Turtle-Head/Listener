@@ -94,20 +94,25 @@ div {
 
     .results {
       display: inline-block;
-      background-color: rgb(10, 35, 204);
       width: 49%;
-
-      ul {
-        text-decoration: none;
-        list-style: none;
-        text-align: left;
-        cursor: pointer;
-      }
+      background-color: rgb(1, 19, 19);
+      padding: 0 3px 0 3px;
+    }
+    .play_li,
+    .res_li {
+      text-align: left;
+      cursor: pointer;
+      padding-left: 5px;
+      margin: 3px 0 3px 0;
+      background-color: rgb(10, 35, 204);
     }
     .playlist {
       display: inline-block;
-      background-color: rgb(9, 11, 60);
+      background-color: rgb(1, 19, 19);
       width: 49%;
+    }
+    .play_li {
+      background-color: rgb(9, 11, 60);
     }
   }
 }
